@@ -33,7 +33,7 @@ function Login({ setUsername, setPassword }) {
       if (password.length < 8) {
         setpassworderror(true);
       } else {
-        fetch("http://localhost:5000/signup", {
+        fetch("https://mysaitodo.herokuapp.com/signup", {
           method: "POST",
           headers: {
             Accept: "application/json",
@@ -57,7 +57,7 @@ function Login({ setUsername, setPassword }) {
   }
   function handleLoginchange(password, username) {
     if (username !== "" && password !== "") {
-      fetch("http://localhost:5000/login", {
+      fetch("https://mysaitodo.herokuapp.com/login", {
         method: "POST",
         headers: {
           Accept: "application/json",
