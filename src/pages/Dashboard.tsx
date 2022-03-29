@@ -53,7 +53,8 @@ function Dashboard() {
   useEffect(() => {
     axios
       .get("https://mysaitodo.herokuapp.com/todos", {
-        headers: { token: token },
+        headers: { token: token,'Content-type':'application/json',
+                        'Access-Control-Allow-Origin': '*' },
       })
       .then((res) => {
         if (res.status === 200) {
@@ -68,7 +69,8 @@ function Dashboard() {
         "https://mysaitodo.herokuapp.com/todo",
         { title: addtodo },
         {
-          headers: { token: token },
+          headers: { token: token,'Content-type':'application/json',
+                        'Access-Control-Allow-Origin': '*', },
         }
       )
       .then((res) => {
