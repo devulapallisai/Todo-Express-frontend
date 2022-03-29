@@ -33,7 +33,7 @@ function Login({ setUsername, setPassword }) {
       if (password.length < 8) {
         setpassworderror(true);
       } else {
-        fetch("/signup", {
+        fetch("https://mysaitodo.herokuapp.com/signup", {
           method: "POST",
           headers: {
             Accept: "application/json",
@@ -44,10 +44,11 @@ function Login({ setUsername, setPassword }) {
           if (res.status === 400) {
             setsignuperror(true);
           } else {
-            navigate("https://todo-express-2022.netlify.app/dashboard");
-            const re = res.json().then((re) => re.token);
-            localStorage.setItem("Token", re);
+            navigate("/dashboard");
+            const re = res.json().then((re) => {
+            localStorage.setItem("Token", re.token);
             localStorage.setItem("name", username);
+            });
           }
         });
       }
@@ -57,7 +58,7 @@ function Login({ setUsername, setPassword }) {
   }
   function handleLoginchange(password, username) {
     if (username !== "" && password !== "") {
-      fetch("/login", {
+      fetch("https://mysaitodo.herokuapp.com/login", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -74,7 +75,7 @@ function Login({ setUsername, setPassword }) {
             localStorage.setItem("Token", re.token);
             localStorage.setItem("name", username);
             // console.log("Success");
-            navigate("https://todo-express-2022.netlify.app/dashboard");
+            navigate("/dashboard");
           }
         });
       });
