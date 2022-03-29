@@ -44,7 +44,7 @@ function Login({ setUsername, setPassword }) {
           if (res.status === 400) {
             setsignuperror(true);
           } else {
-            navigate("/dashboard");
+            navigate("https://todo-express-2022.netlify.app/dashboard");
             const re = res.json().then((re) => re.token);
             localStorage.setItem("Token", re);
             localStorage.setItem("name", username);
@@ -74,7 +74,7 @@ function Login({ setUsername, setPassword }) {
             localStorage.setItem("Token", re.token);
             localStorage.setItem("name", username);
             // console.log("Success");
-            navigate("/dashboard");
+            navigate("https://todo-express-2022.netlify.app/dashboard");
           }
         });
       });
