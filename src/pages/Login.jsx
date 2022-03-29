@@ -37,7 +37,9 @@ function Login({ setUsername, setPassword }) {
           method: "POST",
           headers: {
             Accept: "application/json",
-            "Content-Type": "application/json",
+                        'Content-type':'application/json',
+                        'Access-Control-Allow-Origin': '*',
+                   
           },
           body: JSON.stringify({ email: username, password: password }),
         }).then((res) => {
@@ -62,7 +64,8 @@ function Login({ setUsername, setPassword }) {
         method: "POST",
         headers: {
           Accept: "application/json",
-          "Content-Type": "application/json",
+          'Content-type':'application/json',
+                        'Access-Control-Allow-Origin': '*',
         },
         body: JSON.stringify({ email: username, password: password }),
       }).then((res) => {
