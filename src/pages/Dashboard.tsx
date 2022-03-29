@@ -25,7 +25,7 @@ function Dashboard() {
   const handleDone = (id: String) => {
     axios
       .put(
-        `https://mysaitodo.herokuapp.com/todo/${id}`,
+        `/todo/${id}`,
         {},
         { headers: { token: token } }
       )
@@ -52,7 +52,7 @@ function Dashboard() {
   const [addtodo, settodo] = useState("");
   useEffect(() => {
     axios
-      .get("https://mysaitodo.herokuapp.com/todos", {
+      .get("/todos", {
         headers: { token: token },
       })
       .then((res) => {
@@ -65,7 +65,7 @@ function Dashboard() {
   const handleformsubmit = () => {
     axios
       .post(
-        "https://mysaitodo.herokuapp.com/todo",
+        "/todo",
         { title: addtodo },
         {
           headers: { token: token },
