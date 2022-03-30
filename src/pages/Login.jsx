@@ -47,7 +47,7 @@ function Login({ setUsername, setPassword }) {
             setsignuperror(true);
           } else {
             navigate("/dashboard");
-            const re = res.json().then((re) => {
+            res.json().then((re) => {
             localStorage.setItem("Token", re.token);
             localStorage.setItem("name", username);
             });
