@@ -128,7 +128,7 @@ function Dashboard() {
           <Fab color="primary" aria-label="add" onSubmit={(e)=>handleformsubmit(e)}>
             <AddIcon />
           </Fab>
-        </div>
+        </form>
       </div>
       {/* Todo portion start */}
 
