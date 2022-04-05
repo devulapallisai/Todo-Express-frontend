@@ -63,7 +63,7 @@ function Dashboard() {
       })
       .catch((err) => console.log(err));
   }, []);
-  const handleformsubmit = (e) => {
+  const handleformsubmit = (e:React.SyntheticEvent) => {
     e.preventDefault();
     axios
       .post(
