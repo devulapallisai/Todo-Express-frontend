@@ -63,7 +63,8 @@ function Dashboard() {
       })
       .catch((err) => console.log(err));
   }, []);
-  const handleformsubmit = () => {
+  const handleformsubmit = (e) => {
+    e.preventDefault();
     axios
       .post(
         "https://mysaitodo.herokuapp.com/todo",
@@ -108,7 +109,7 @@ function Dashboard() {
         >
           Todo List
         </h1>
-        <div
+        <form
           className="form"
           style={{
             marginTop: "5px",
@@ -124,7 +125,7 @@ function Dashboard() {
             variant="standard"
             style={{ width: "60%", fontFamily: "Helvetica" }}
           />
-          <Fab color="primary" aria-label="add" onClick={handleformsubmit}>
+          <Fab color="primary" aria-label="add" onSubmit={(e)=>handleformsubmit(e)}>
             <AddIcon />
           </Fab>
         </div>
