@@ -63,8 +63,8 @@ function Dashboard() {
       })
       .catch((err) => console.log(err));
   }, []);
-  const handleformsubmit = (e:React.SyntheticEvent) => {
-    e.preventDefault();
+  const handleformsubmit = () => {
+//     e.preventDefault();
     axios
       .post(
         "https://mysaitodo.herokuapp.com/todo",
@@ -125,7 +125,7 @@ function Dashboard() {
             variant="standard"
             style={{ width: "60%", fontFamily: "Helvetica" }}
           />
-          <Fab color="primary" aria-label="add" onSubmit={(e)=>handleformsubmit(e)}>
+          <Fab color="primary" aria-label="add" onClick={handleformsubmit}>
             <AddIcon />
           </Fab>
         </div>
