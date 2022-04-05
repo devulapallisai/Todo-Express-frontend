@@ -109,7 +109,7 @@ function Dashboard() {
         >
           Todo List
         </h1>
-        <form
+        <div
           className="form"
           style={{
             marginTop: "5px",
@@ -128,7 +128,7 @@ function Dashboard() {
           <Fab color="primary" aria-label="add" onSubmit={(e)=>handleformsubmit(e)}>
             <AddIcon />
           </Fab>
-        </form>
+        </div>
       </div>
       {/* Todo portion start */}
 
